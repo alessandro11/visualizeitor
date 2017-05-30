@@ -1,0 +1,64 @@
+body, html {
+	height: 100%;
+}
+
+div.container {
+	min-height: 100%;
+	height: auto;
+	position: relative;
+	height: 100%;
+	width: 100%;
+	margin: 0; padding: 0;
+    border: 1px solid gray;
+}
+
+header {
+    padding: 1em;
+    color: green;
+    background-color: black;
+    clear: left;
+    text-align: center;
+}
+
+footer {
+    color: green;
+    background-color: black;
+    clear: left;
+    text-align: center;
+	margin-top: -35px;
+	height: 35px;
+	width: auto;
+}
+
+#main{
+    background: white;
+    width: auto;
+    padding-bottom: 35px;
+}
+
+nav {
+    float: left;
+    max-width: auto;
+    margin: 0;
+    padding: 1em;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul a {
+    text-decoration: none;
+}
+
+#dic_doc {
+	text-align: left;
+}
+
+article {
+    margin-left: 170px;
+    border-left: 1px solid gray;
+    padding: 1em;
+    overflow: hidden;
+}
