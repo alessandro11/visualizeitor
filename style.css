@@ -38,7 +38,6 @@ footer {
 
 nav {
     float: left;
-    max-width: auto;
     margin: 0;
     padding: 1em;
 }
@@ -56,9 +55,25 @@ nav ul a {
 	text-align: left;
 }
 
-article {
-    margin-left: 170px;
-    border-left: 1px solid gray;
-    padding: 1em;
-    overflow: hidden;
+table {
+	margin-top: 10px;
+    border: 1px solid black;
+	width: 100%;
+    border-collapse: collapse;
+}
+
+td {
+	border: 1px solid black;
+}
+
+/*
+table#t01 th {
+    background-color: black;
+    color: white;
+}
+*/
+
+.w3-hover-green:hover {
+	color:#fff!important;
+	background-color:#4CAF50!important;
 }
