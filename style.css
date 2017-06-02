@@ -51,6 +51,7 @@ nav ul a {
     text-decoration: none;
 }
 
+
 #dic_doc {
 	text-align: left;
 }
@@ -63,7 +64,9 @@ table {
 }
 
 td {
-	border: 1px solid black;
+	border:1px solid gray;
+	vertical-align: center;
+	padding: 12px;
 }
 
 /*
@@ -76,4 +79,36 @@ table#t01 th {
 .w3-hover-green:hover {
 	color:#fff!important;
 	background-color:#4CAF50!important;
+}
+
+.codigo {
+	border:1px solid gray;
+	vertical-align:center;
+	text-align: center;
+	width:50px;
+}
+
+.menu-left {
+	float:left;
+	width:20%;
+}
+
+.main-table {
+	float:left;
+	width:70%;
+}
+
+.table_grade {
+	border:1px solid gray;
+	border-collapse:collapse;
+	font-family:Trebuchet MS, Verdana, Arial, Sans-serif;
+}
+
+.titulos_table {
+	border:1px solid gray;
+	background-color:#e9ddaf;
+	text-align:center;
+	vertical-align:center;
+	font-weight:bolder;
+	color:#000020;
 }
