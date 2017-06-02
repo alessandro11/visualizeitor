@@ -64,7 +64,7 @@ table {
 
 td {
 	border:1px solid gray;
-	vertical-align: center;
+	/*vertical-align: center;*/
 	padding: 12px;
 }
 
@@ -86,7 +86,7 @@ table#t01 th {
 
 .codigo {
 	border:1px solid gray;
-	vertical-align:center;
+	/*vertical-align:center;*/
 	text-align: center;
 	width:50px;
 }
@@ -111,7 +111,7 @@ table#t01 th {
 	border:1px solid gray;
 	background-color:#e9ddaf;
 	text-align:center;
-	vertical-align:center;
+	/*vertical-align:center;*/
 	font-weight:bolder;
 	color:#000020;
 }
