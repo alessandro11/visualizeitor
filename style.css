@@ -76,9 +76,13 @@ table#t01 th {
 }
 */
 
-.w3-hover-green:hover {
+.codigo-hover:hover {
+	/*
 	color:#fff!important;
 	background-color:#4CAF50!important;
+   */
+	font-weight:bold!important;
+	cursor:pointer!important;
 }
 
 .codigo {
