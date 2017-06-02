@@ -1,6 +1,7 @@
 var xmldoc;
 
 
+/*_______________________________________________________________________*/
 function loadXMLDoc()
 {
 	var xmlhttp = new XMLHttpRequest();
