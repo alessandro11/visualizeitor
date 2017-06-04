@@ -244,3 +244,22 @@ CI261 - Trabalho de Graduação em Processamento de Imagens II
 				  <div class="tooltip"><span class="tooltiptext"></span></div>
 				</td>
 			  </tr>
+
+
+
+CI063  xmlparser.js:66:3
+CI066  xmlparser.js:66:3
+CI202  xmlparser.js:66:3
+CI060  xmlparser.js:66:3
+CI219  xmlparser.js:66:3
+CM224  xmlparser.js:66:3
+CI235  xmlparser.js:66:3
+CI060  xmlparser.js:66:3
+SE045  xmlparser.js:66:3
+CI236  xmlparser.js:66:3
+CI202  xmlparser.js:66:3
+CI206  xmlparser.js:66:3
+SE044  xmlparser.js:66:3
+CI206  xmlparser.js:66:3
+SIN070  xmlparser.js:66:3
+TP052
