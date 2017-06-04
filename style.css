@@ -159,3 +159,15 @@ table#t01 th {
     visibility: visible;
     opacity: 1;
 }
+
+.Aprovado {
+	background:green;
+}
+
+.Reprovado {
+	background:red;
+}
+
+.Equivale {
+	background:yellow;
+}
