@@ -30,10 +30,8 @@ function parse_aluno(aluno) {
 	var tmp;
 
 	/* child 27 <SITUACAO> */
-	//if( aluno.childNodes[27].firstChild === null )
-	//	return;
-
 	situacao = aluno.childNodes[27].firstChild.nodeValue;
+
 	/*
 	 * Fix name, in case name does follow valid syntaxe.
 	 */
@@ -54,6 +52,22 @@ function parse_aluno(aluno) {
 		disc_undef.push(cod_disc);
 	} else {
 		if( situacao !== "Nulo" ) {
+			var lcd = last_mat[cod_disc];
+			var y = parseInt(aluno.childNodes[19].firstChild.nodeValue);
+			var s = aluno.childNodes[25].firstChild.nodeValue[0];
+
+			if( lcd == undefined ) {
+				last_mat[cod_disc] = {year: y, sem: parseInt(s)};
+			} else {
+				console.log(cod_disc, last_mat[cod_disc].year, y, last_mat[cod_disc].sem, s);
+				if( last_mat[cod_disc].year < y || (last_mat[cod_disc].year == y && last_mat[cod_disc].sem > s) ) {
+					disc_td.classList.toggle("Aprovado", false);
+					disc_td.classList.toggle("Reprovado", false);
+					disc_td.classList.toggle("Equivale", false);
+					disc_td.classList.toggle("Matriculado", false);
+				} else return;
+			}
+
 			disc_td.classList.toggle(situacao, true);
 		}
 	}
