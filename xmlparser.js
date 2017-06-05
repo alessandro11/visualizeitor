@@ -59,12 +59,14 @@ function parse_aluno(aluno) {
 			if( lcd == undefined ) {
 				last_mat[cod_disc] = {year: y, sem: parseInt(s)};
 			} else {
-				console.log(cod_disc, last_mat[cod_disc].year, y, last_mat[cod_disc].sem, s);
-				if( last_mat[cod_disc].year < y || (last_mat[cod_disc].year == y && last_mat[cod_disc].sem > s) ) {
+				if( last_mat[cod_disc].year < y ||
+					(last_mat[cod_disc].year == y && last_mat[cod_disc].sem < s) ) {
 					disc_td.classList.toggle("Aprovado", false);
 					disc_td.classList.toggle("Reprovado", false);
 					disc_td.classList.toggle("Equivale", false);
 					disc_td.classList.toggle("Matriculado", false);
+					last_mat[cod_disc].year = y;
+					last_mat[cod_disc].sem = s;
 				} else return;
 			}
 
