@@ -134,18 +134,21 @@ function get_info_last_mat(cod_disc) {
 
 	var alunos = xmldoc.getElementsByTagName("ALUNO");
 	var aluno;
-	var year;
+	var y, rs, s = 0;
 	for( i = 0; i < alunos.length; ++i ) {
 		aluno = alunos[i];
 		if( aluno.childNodes[3].firstChild.nodeValue === grr_val
 			&& aluno.childNodes[29].firstChild.nodeValue === cod_disc ) {
-			year = parseInt(aluno.childNodes[19].firstChild.nodeValue);
-			if( result.year < year ) {
+			y = parseInt(aluno.childNodes[19].firstChild.nodeValue);
+			rs = parseInt(aluno.childNodes[25].firstChild.nodeValue[0]);
+			if( result.year < y ||
+				(result.year == y && s < rs) ) {
 				result.cod_disc = cod_disc;
 				result.disc_name = aluno.childNodes[31].firstChild.nodeValue;
-				result.year = year;
+				result.year = y;
 				result.score = aluno.childNodes[21].firstChild.nodeValue;
 				result.sem = aluno.childNodes[25].firstChild.nodeValue;
+				s = parseInt(aluno.childNodes[25].firstChild.nodeValue[0]);
 				result.freq = parseFloat(aluno.childNodes[47].firstChild.nodeValue);
 			}
 		}
