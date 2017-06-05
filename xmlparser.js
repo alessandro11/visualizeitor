@@ -22,13 +22,16 @@ function GetXMLDoc(xml) {
 }
 
 var disc_undef = [];
+var last_mat;
 function parse_aluno(aluno) {
+	/* child 29 <COD_ATIV_CURRIC> */
 	var cod_disc = aluno.childNodes[29].firstChild.nodeValue;
 	var situacao;
+	var tmp;
 
-	/* child 53 */
-	if( aluno.childNodes[53].firstChild === null )
-		return;
+	/* child 27 <SITUACAO> */
+	//if( aluno.childNodes[27].firstChild === null )
+	//	return;
 
 	situacao = aluno.childNodes[27].firstChild.nodeValue;
 	/*
@@ -48,8 +51,9 @@ function parse_aluno(aluno) {
 	if( disc_td === null ) {
 		disc_undef.push(cod_disc);
 	} else {
-		if( situacao !== "Nulo" )
+		if( situacao !== "Nulo" ) {
 			disc_td.classList.toggle(situacao, true);
+		}
 	}
 }
 
@@ -74,9 +78,8 @@ function btn_Click_Search() {
 	matricula = txt_grr.value;
 	var alunos = xmldoc.getElementsByTagName("ALUNO");
 	var aluno;
-	var cod_dic;
 	var count = 0;
-
+	last_mat = new Object();
 	for( i = 0; i < alunos.length; ++i ) {
 		aluno = alunos[i];
 		if( aluno.childNodes[3].firstChild.nodeValue === matricula ) {
@@ -169,7 +172,7 @@ function PopUpResult(res) {
 		"       Ano: " + res.year + "<br>" +
 		"  Semestre: " + res.sem + "<br>" +
 		"      Nota: " + res.score + "<br>" +
-		"Frequencia: " + res.freq
+		"Frequencia: " + res.freq.toFixed(2);
 	;
 
 	document.getElementById('myModal-content').innerHTML = str;
@@ -200,7 +203,7 @@ function get_cod_disc(target) {
 		return target.id;
 }
 
-function tbl_main_grade_MouseDown(event) {
+function tbl_MouseDown(event) {
 	var cod_disc;
 	var res;
 
@@ -214,27 +217,6 @@ function tbl_main_grade_MouseDown(event) {
 	}
 }
 
-function tbl_opt_grade_MouseDown(event) {
-	var cod_disc;
-
-	cod_disc = get_cod_disc(event.target);
-	console.log(cod_disc);
-}
-
-function tbl_tg_grade_MouseDown(event) {
-	var cod_disc;
-
-	cod_disc = get_cod_disc(event.target);
-	console.log(cod_disc);
-}
-
-function tbl_old_grade_MouseDown(event) {
-	var cod_disc;
-
-	cod_disc = get_cod_disc(event.target);
-	console.log(cod_disc);
-}
-
 document.addEventListener("DOMContentLoaded", function(event) {
 	loadXMLDoc();
 	txt_grr = document.getElementById("txt_grr");
@@ -242,10 +224,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
 document.oncontextmenu = function() { return false; }
 document.getElementById("btn_search").addEventListener('click', btn_Click_Search, true);
 document.getElementById("txt_grr").addEventListener('keypress', txt_grr_KeyPress, true);
-document.getElementById("main_grade").addEventListener('mousedown', tbl_main_grade_MouseDown, true);
-document.getElementById("opt_grade").addEventListener('mousedown', tbl_opt_grade_MouseDown, true);
-document.getElementById("tg_grade").addEventListener('mousedown', tbl_tg_grade_MouseDown, true);
-document.getElementById("old_grade").addEventListener('mousedown', tbl_old_grade_MouseDown, true);
+document.getElementById("main_grade").addEventListener('mousedown', tbl_MouseDown, true);
+document.getElementById("opt_grade").addEventListener('mousedown', tbl_MouseDown, true);
+document.getElementById("tg_grade").addEventListener('mousedown', tbl_MouseDown, true);
+document.getElementById("old_grade").addEventListener('mousedown', tbl_MouseDown, true);
 
 document.getElementsByClassName("close")[0].onclick = function() {
 	document.getElementById('myModal').style.display = "none";
