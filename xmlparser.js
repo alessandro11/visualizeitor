@@ -39,6 +39,8 @@ function parse_aluno(aluno) {
 	 */
 	if( situacao === "Matrícula" )
 		situacao = "Matriculado";
+	else if( situacao === "Aprovado" )
+		situacao = "Aprovado";
 	else if( situacao === "Reprovado por Frequência"
 			 || situacao === "Reprovado por nota"
 			 || situacao === "Reprovado sem nota" )
@@ -64,6 +66,7 @@ function remove_class_situation() {
 		lst_td[i].classList.toggle("Aprovado", false);
 		lst_td[i].classList.toggle("Reprovado", false);
 		lst_td[i].classList.toggle("Equivale", false);
+		lst_td[i].classList.toggle("Matriculado", false);
 	}
 }
 
